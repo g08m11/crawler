@@ -5,7 +5,9 @@ $res = @file_get_contents($url);
 while ($res) {
       $data = getData($res);
           foreach ($data["image"] as $image) {
+                    echo "<li>";
                     echo "<img src='".$image["src"]."'>\n";
+                    echo "</li>";
                         }
           if ($data["nextPage"]) { // 次のページがあるか？
                     $res = @file_get_contents($url."?page=".$data["nextPage"]);  // URL の末尾に ?page= をつけると、ページを指定することができる。
